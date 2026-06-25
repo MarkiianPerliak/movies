@@ -9,9 +9,15 @@ import { Trending } from "./Components/Trending/Trending"
 import { GetMDetails } from "./Components/GetMDetails/GetMDetails"
 import { GetMCredits } from "./Components/GetMCredits/GetMCredits"
 import { GetMReviews } from "./Components/GetMReviews/GetMReviews"
-
+import { useState, useEffect } from "react"
+import {getAPI} from "./API/Movies/GetApi"
 
 function App() {
+  const {movies, setMovies} = useState()
+
+  useEffect(() => {
+    getAPI().then(data => console.log(data))
+  }, [])
 
   return (
     <>
