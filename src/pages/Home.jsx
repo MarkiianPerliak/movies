@@ -1,7 +1,11 @@
 import React from 'react'
+import { Trending } from '../Components/Trending/Trending'
 
-export const Home = () => {
+export const Home = ({populars}) => {
   return (
-    <div>Home</div>
+    <div>
+      <h1>Home</h1>
+      <Trending movies={populars}/>
+    </div>
   )
 }
