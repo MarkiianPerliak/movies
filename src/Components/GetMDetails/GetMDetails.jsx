@@ -33,7 +33,7 @@ export const GetMDetails = () => {
       </div>
       <p>Additional info</p>
       <ul>
-        <li><Link to={`/movies/${film.id}/cast`}>Cast</Link></li>
+        <li><Link to={`/movies/${film.id}/languages`}>Spoken Languages</Link></li>
 
         <li><Link to={`/movies/${film.id}/reviews`}>Reviews</Link></li>
       </ul>

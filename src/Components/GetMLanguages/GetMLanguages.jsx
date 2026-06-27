@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
 import { getAPI } from '../../API/Movies/GetApi'
 
-export const GetMReviews = () => {
+export const GetMLanguages = () => {
   const {movieId} = useParams()
   const [film, setFilm] = useState({})
   
@@ -14,16 +14,13 @@ export const GetMReviews = () => {
   }, [])
   return (
     <div>
-      <h3>Reviews</h3>
+      <h3>Spoken Languages</h3>
       <ul>
-        {film.reviews?.map(language => {
+        {film.spoken_languages?.map(language => {
           return         <li>
-          <p>{language}</p>
+          <p>{language.name}</p>
         </li>
         })}
-        {!film.reviews ? (
-            <p>No reviews found</p>
-        ) : null}
       </ul>
     </div>
   )

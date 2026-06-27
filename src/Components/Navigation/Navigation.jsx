@@ -1,13 +1,14 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
+import s from "./Navigation.module.css"
 
 export const Navigation = () => {
   return (
     <div>
-        <Link to={"/"}>Home</Link>
-        {/* <Link to={"/content"}>Content</Link> */}
-        {/* <Link to={"/search"}>Posts</Link> */}
-        <Link to={"/movies"}>Movies</Link>
+        <NavLink className={({isActive}) => isActive ? s.activelink : s.link} to={"/"}>Home</NavLink>
+        {/* <NavLink to={"/content"}>Content</NavLink> */}
+        {/* <NavLink to={"/search"}>Posts</NavLink> */}
+        <NavLink className={({isActive}) => isActive ? s.activelink : s.link} to={"/movies"}>Movies</NavLink>
     </div>
   )
 }
