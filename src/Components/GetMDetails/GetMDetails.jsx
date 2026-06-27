@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Outlet, useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { getAPI } from '../../API/Movies/GetApi'
 
@@ -19,7 +19,7 @@ export const GetMDetails = () => {
         <ul>
           <li>
             <h2>{film.title} ({film.release_date})</h2>
-            <p>User Score: {film.vote_average * 10}%</p>
+            <p>User Score: {Math.round(film.vote_average * 10)}%</p>
           </li>
           <li>
             <h3>Overview</h3>
@@ -34,8 +34,10 @@ export const GetMDetails = () => {
       <p>Additional info</p>
       <ul>
         <li><Link to={`/movies/${film.id}/cast`}>Cast</Link></li>
+
         <li><Link to={`/movies/${film.id}/reviews`}>Reviews</Link></li>
       </ul>
+      <Outlet />
     </div>
   )
 }

@@ -24,7 +24,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home  populars={movies}/>} />
         <Route path="/content" element={<Content />} />
-        <Route path="/movies" element={<Movies/>} /><Route path="/movies/:movieId" element={<GetMDetails />} ></Route>
+        <Route path="/movies/:movieId" element={<GetMDetails />} ><Route path="/movies/:movieId/cast" element={<GetMCredits />} /><Route path="/movies/:movieId/reviews" element={<GetMReviews />} /></Route>
         {/* <Route path="/movies" element={<Movies/>} ><Route path="/movies/:movieId/cast" element={<GetMCredits />}></Route>
         <Route path="/movies" element={<Movies/>} ><Route path="/movies/:movieId/reviews" element={<GetMReviews />}></Route></Route> */}
         <Route path="*" element={<Error />} />
